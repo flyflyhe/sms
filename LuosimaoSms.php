@@ -31,7 +31,7 @@ class LuosimaoSms extends SmsAbstract
         }
 
         $resArr = json_decode($res, true);
-        if (empty($resArr['error']) || 0 !== $resArr['error']) {
+        if (!isset($resArr['error']) || 0 !== $resArr['error']) {
             $this->setError($resArr['msg'] ?? '未知错误');
             return false;
         }

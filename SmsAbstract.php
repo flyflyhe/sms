@@ -27,7 +27,7 @@ abstract class SmsAbstract implements SmsInterface, ErrorInterface
 
     public function getError() :string
     {
-        return $this->errorMsg;
+        return $this->errorMsg ?? '';
     }
 
     public function setPhone(string $phone)
