@@ -16,7 +16,7 @@ class SmsTest extends TestCase
     public function setUp()
     {
         $this->config = require __DIR__.'/config.php';
-        $this->phone = '18137373259';
+        $this->phone = '';
         $this->countryCode = '86';
     }
 
