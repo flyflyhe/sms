@@ -8,7 +8,9 @@ namespace sms;
  */
 interface SmsInterface
 {
-    public function send(string $message);
+    public function send(string $message) :bool;
+
+    public function sendVoice(string $message) :bool;
 
     public function setPhone(string $phone);
 
