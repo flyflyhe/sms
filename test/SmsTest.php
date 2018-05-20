@@ -5,7 +5,6 @@ use he\sms\AliSms;
 use PHPUnit\Framework\TestCase;
 use he\sms\LuosimaoSms;
 use he\sms\TxSms;
-require dirname(__DIR__).'/vendor/autoload.php';
 class SmsTest extends TestCase
 {
     protected $config;
