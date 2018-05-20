@@ -3,6 +3,10 @@ namespace he\sms;
 
 class TeleSignSms extends SmsAbstract
 {
+    public function __construct(array $config)
+    {
+    }
+
     public function send(string $message): bool
     {
         return true;
