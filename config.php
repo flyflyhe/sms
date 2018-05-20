@@ -4,5 +4,13 @@ return [
 
     'txAppId' => '',
 
-    'txAppKey' => ''
+    'txAppKey' => '',
+
+    'aliAccessKeyId' => '',
+
+    'aliAccessKeySecret' => '',
+
+    'aliSignName' => '',
+
+    'aliTemplateCode' => ''
 ];

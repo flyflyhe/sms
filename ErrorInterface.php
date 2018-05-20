@@ -1,5 +1,5 @@
 <?php
-namespace sms;
+namespace he\sms;
 
 interface  ErrorInterface
 {

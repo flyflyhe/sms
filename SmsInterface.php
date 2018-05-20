@@ -1,5 +1,5 @@
 <?php
-namespace sms;
+namespace he\sms;
 
 /**
  * sms interface 暴露方法
@@ -19,4 +19,5 @@ interface SmsInterface
     public function getPhone();
 
     public function getCountryCode();
+
 }

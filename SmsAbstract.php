@@ -1,5 +1,5 @@
 <?php
-namespace sms;
+namespace he\sms;
 
 /**
  * sms Interface 公共实现
@@ -15,6 +15,8 @@ abstract class SmsAbstract implements SmsInterface, ErrorInterface
     protected $countryCode;
 
     protected $errorMsg;
+
+    protected $singName;
 
     abstract public function send(string $message) :bool ;
 

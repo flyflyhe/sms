@@ -1,10 +1,11 @@
 <?php
-namespace sms\test;
+namespace he\sms\test;
 
+use he\sms\AliSms;
 use PHPUnit\Framework\TestCase;
-use sms\LuosimaoSms;
-use sms\TxSms;
-
+use he\sms\LuosimaoSms;
+use he\sms\TxSms;
+require dirname(__DIR__).'/vendor/autoload.php';
 class SmsTest extends TestCase
 {
     protected $config;
@@ -18,6 +19,14 @@ class SmsTest extends TestCase
         $this->config = require __DIR__.'/config.php';
         $this->phone = '';
         $this->countryCode = '86';
+    }
+
+    public function testAli()
+    {
+        $ali = new AliSms($this->config);
+        $ali->setPhone($this->phone);
+        $ali->setCountryCode($this->countryCode);
+        $this->assertTrue($ali->send('1234'));
     }
 
     public function testSentLsm()
