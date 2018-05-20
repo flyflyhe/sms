@@ -1,4 +1,10 @@
 {
+    "name":"he/sms",
+    "type":"library",
+    "description": "常用 短信服务",
+    "keywords": ["sms 短信"],
+    "homepage": "https://github.com/flyflyhe/sms",
+    "license": "MIT",
     "require": {
         "phpunit/phpunit": "^6.5"
     },
