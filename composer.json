@@ -6,7 +6,7 @@
     "homepage": "https://github.com/flyflyhe/sms",
     "license": "MIT",
     "require": {
-        "phpunit/phpunit": "^6.5"
+
     },
     "autoload": {
         "psr-4": {
