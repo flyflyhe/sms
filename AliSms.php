@@ -68,7 +68,7 @@ class AliSms extends SmsAbstract
         }
 
         $res = $this->request($params);
-        if (!isset($res['Code']) || $res['Code'] !== 'Ok') {
+        if (!isset($res['Code']) || $res['Code'] !== 'OK') {
             $this->setError($res['Message'] ?? '未知错误');
             return false;
         }
