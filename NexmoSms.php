@@ -30,7 +30,6 @@ class NexmoSms extends SmsAbstract
     public function send(string $message): bool
     {
         $response = $this->postRequest($this->apiUrl, $this->getParam($message));
-        var_dump($response);
         $result = json_decode($response, true);
         if (isset($result['messages']) && $result['messages'][0]['status'] == 0) {
             return true;
