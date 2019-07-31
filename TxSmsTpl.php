@@ -5,6 +5,8 @@ class TxSmsTpl extends TxSms
 {
     protected $txTplId;
 
+    protected $params = [];
+
     public function __construct(array $config)
     {
         parent::__construct($config);
@@ -12,6 +14,7 @@ class TxSmsTpl extends TxSms
             throw new \Exception('腾讯云 模板id 未设置');
         }
         $this->txTplId = $config['txTplId'];
+        $this->params = $config['txParams'];
     }
 
     protected function getSendByUri(string $uri, string $message)
@@ -31,6 +34,7 @@ class TxSmsTpl extends TxSms
         ]);
 
         $dataArr = [
+            'params' => $this->params,
             "tel" => [
                 "nationcode" => $this->getCountryCode(), //国家码
                 "mobile" => $this->getPhone() //手机号码

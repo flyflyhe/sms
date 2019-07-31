@@ -10,6 +10,11 @@ return [
 
     'txTplId' => '', #腾讯模板id
 
+    /**
+     * @var array
+     */
+    'txParams' => [],
+
     'aliAccessKeyId' => '',
 
     'aliAccessKeySecret' => '',
