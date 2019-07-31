@@ -8,6 +8,8 @@ return [
 
     'txType' => 0,
 
+    'txTplId' => '', #腾讯模板id
+
     'aliAccessKeyId' => '',
 
     'aliAccessKeySecret' => '',
