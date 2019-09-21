@@ -14,6 +14,10 @@ class TxSms extends SmsAbstract
 
     protected $txAppKey;
 
+    protected $txTplId;
+
+    protected $txParams = [];
+
     protected $txType = 0;
 
     public function send(string $message) :bool
@@ -76,7 +80,9 @@ class TxSms extends SmsAbstract
             "sig" =>  hash("sha256", $shaStr), //app凭证，具体计算方式见下注
             "time" => $time, //unix时间戳，请求发起时间，如果和系统时间相差超过10分钟则会返回失败
             "extend" =>  "", //通道扩展码，可选字段，默认没有开通(需要填空)。
-            "ext" => ""
+            "ext" => "",
+            'tplId' => $this->txTplId,
+            'params' => $this->txParams
         ];
 
         return $this->postRequest($uri.$suffix, json_encode($dataArr));
@@ -91,7 +97,15 @@ class TxSms extends SmsAbstract
             throw new \Exception('腾讯云 appkey 未设置');
         }
 
+        if (empty($config['txTplId'])) {
+            throw new \Exception('腾讯云 tplid 未设置');
+        }
+
         $this->txAppId = $config['txAppId'];
         $this->txAppKey = $config['txAppKey'];
+        $this->txTplId = $config['txTplId'];
+        if (!empty($config['txParams'])) {
+            $this->txParams = $config['txParams'];
+        }
     }
 }
